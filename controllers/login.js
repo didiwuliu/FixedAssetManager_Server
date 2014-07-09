@@ -98,7 +98,7 @@ exports.signIn = function (req, res, next) {
     }
 
     if (!req.session || !req.session.captchaCode || 
-       captchaCode != req.session.captchaCode) {
+        captchaCode != req.session.captchaCode) {
         return res.send("4");
     }
 
@@ -114,6 +114,10 @@ exports.signIn = function (req, res, next) {
         var salt      = SHA256(userId).toString();
         var encryptPwd = SHA3(passwd + salt).toString();
 
+        console.log(userAuthInfo);
+        console.log(userId);
+        console.log(salt);
+        console.log(encryptPwd);
         //check
         if (userId === userAuthInfo.uid && encryptPwd === userAuthInfo.pwd
             && salt === userAuthInfo.token) {
