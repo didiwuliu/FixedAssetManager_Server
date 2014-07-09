@@ -37,8 +37,8 @@ exports.appErrorProcess = function (app) {
         app.error(function(err, req, res, next) {
             console.log("error:" + err.stack || err.message);
             mailServie.sendMail({
-              subject : "FixedAssetManager_Server[App Error]",
-              text    : err.message + "\n" + err.stack + "\n" + err.toString()
+                subject : "FixedAssetManager_Server[App Error]",
+                text    : err.message + "\n" + err.stack + "\n" + err.toString()
             });
             if (err instanceof PageNotFoundError) {
                 res.render("errors/404");

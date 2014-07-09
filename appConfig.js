@@ -43,7 +43,7 @@ exports.config = {
 
     session_secret      : "Fixed_Asset_0987654321",
 
-    mail_opts           : {
+    /*mail_opts           : {
         host  : "smtp.163.com",
         port  : 25,
         auth  : {
@@ -55,7 +55,7 @@ exports.config = {
     mailDefault_TO      : [
         "huayang@wisedu.com",
         "zcliu@wisedu.com"
-    ],
+    ],*/
 
     networkIsOk         : 1,
 

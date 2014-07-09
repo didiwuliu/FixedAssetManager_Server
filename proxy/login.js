@@ -51,6 +51,9 @@ exports.getUserAuthInfoByUserId = function(userId, callback) {
             "uid"  : userId
         }
     }, function (err, rows) {
+        console.log(err);
+        console.log(rows);
+
         if (err || !rows) {
             return callback(new ServerError(), null);
         }
@@ -60,7 +63,6 @@ exports.getUserAuthInfoByUserId = function(userId, callback) {
         } else {
             callback(null, null);
         }
-        
     });
 };
 

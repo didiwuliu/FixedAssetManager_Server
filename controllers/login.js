@@ -103,7 +103,7 @@ exports.signIn = function (req, res, next) {
     }
 
     Login.getUserAuthInfoByUserId(userId, function (err, userAuthInfo) {
-        if (err) {
+        if(err) {
             return res.send("3");
         }
 
